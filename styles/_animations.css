@@ -1,0 +1,37 @@
+
+.route-appear,
+.route-enter {
+	animation: enter 1s ease;
+}
+
+@keyframes enter {
+	from {
+		transform: translateX(200vh);
+	}
+	to {
+		transform: translateX(0);
+	}
+}
+
+.route-exit {
+	animation: exit 1s ease;
+	position: absolute;
+}
+
+@keyframes exit {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-200vh);
+	}
+}
+
+.route-reverse-enter {
+	animation: exit 1s ease reverse;
+}
+
+.route-reverse-exit {
+	animation: enter 1s ease reverse;
+	position: absolute;
+}
