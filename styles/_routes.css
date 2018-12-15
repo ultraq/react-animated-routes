@@ -1,4 +1,27 @@
 
+.route {
+	--duration: 800ms;
+}
+
+.route-appear,
+.route-enter {
+	animation: enter var(--duration) ease-in-out;
+}
+
+.route-exit {
+	animation: exit var(--duration) ease-in-out;
+	position: absolute;
+}
+
+.route-reverse-enter {
+	animation: exit var(--duration) ease-in-out reverse;
+}
+
+.route-reverse-exit {
+	animation: enter var(--duration) ease-in-out reverse;
+	position: absolute;
+}
+
 @keyframes enter {
 	from {
 		opacity: 0;
@@ -19,23 +42,4 @@
 		opacity: 0;
 		transform: translateX(-250vh);
 	}
-}
-
-.route-appear,
-.route-enter {
-	animation: enter 500ms ease-in-out;
-}
-
-.route-exit {
-	animation: exit 500ms ease-in-out;
-	position: absolute;
-}
-
-.route-reverse-enter {
-	animation: exit 500ms ease-in-out reverse;
-}
-
-.route-reverse-exit {
-	animation: enter 500ms ease-in-out reverse;
-	position: absolute;
 }

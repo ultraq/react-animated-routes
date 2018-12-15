@@ -2,7 +2,7 @@
 import React from 'react';
 
 const PageA = () => (
-	<section className="page page-a">
+	<section className="route page page-a">
 		<header>
 			<h1>Page A</h1>
 		</header>
