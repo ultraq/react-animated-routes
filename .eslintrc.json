@@ -1,6 +1,7 @@
 {
 	"extends": [
 		"eslint:recommended",
+		"plugin:react/recommended",
 		"eslint-config-ultraq"
 	],
 	"parserOptions": {
@@ -8,5 +9,9 @@
 			"jsx": true
 		},
 		"ecmaVersion": 2018
+	},
+	"env": {
+		"browser": true,
+		"node": true
 	}
 }

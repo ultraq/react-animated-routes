@@ -32,6 +32,7 @@
 		"concurrently": "^4.1.0",
 		"eslint": "^5.10.0",
 		"eslint-config-ultraq": "^2.2.0",
+		"eslint-plugin-react": "^7.11.1",
 		"express": "^4.16.4",
 		"mkdirp": "^0.5.1",
 		"ncp": "^2.0.0",

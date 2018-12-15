@@ -12,5 +12,5 @@ app.get('/', (request, response) => {
 });
 
 app.listen(port, () => {
-	console.log(`Demo app listening on port ${port}...`);
+	console.log(`Demo app listening on port ${port}...`); // eslint-disable-line
 });
