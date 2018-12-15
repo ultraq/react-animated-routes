@@ -1,8 +1,6 @@
 
+import asyncComponent from './asyncComponent.js';
 import Navigation from './Navigation.js';
-import PageA from './PageA.js';
-import PageB from './PageB.js';
-import PageC from './PageC.js';
 
 import React, {Fragment} from 'react';
 import ReactDOM from 'react-dom';
@@ -14,9 +12,15 @@ ReactDOM.render(
 			<Navigation/>
 			<div className="page-wrapper">
 				<Switch>
-					<Route path="/a" render={routeProps => <PageA {...routeProps}/>}/>
-					<Route path="/b" render={routeProps => <PageB {...routeProps}/>}/>
-					<Route path="/c" render={routeProps => <PageC {...routeProps}/>}/>
+					<Route path="/a" component={asyncComponent(() => {
+						return import(/* webpackChunkName: 'demo-page-a' */ './PageA.js');
+					})}/>
+					<Route path="/b" component={asyncComponent(() => {
+						return import(/* webpackChunkName: 'demo-page-b' */ './PageB.js');
+					})}/>
+					<Route path="/c" component={asyncComponent(() => {
+						return import(/* webpackChunkName: 'demo-page-c' */ './PageC.js');
+					})}/>
 				</Switch>
 			</div>
 		</Fragment>
