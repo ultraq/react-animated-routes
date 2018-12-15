@@ -1,5 +1,9 @@
 
-const routes = ['/a', '/b', '/c'];
+export const routes = [
+	'/a',
+	'/b',
+	'/c'
+];
 
 let lastCheckedLocation;
 let lastResult;

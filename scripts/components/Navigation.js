@@ -1,7 +1,7 @@
 
 import classNames from 'classnames';
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Link, withRouter} from 'react-router-dom';
 
 const Navigation = ({location}) => {
 	let path = location.pathname;
@@ -20,4 +20,4 @@ const Navigation = ({location}) => {
 	);
 };
 
-export default Navigation;
+export default withRouter(Navigation);
