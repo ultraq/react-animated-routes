@@ -1,0 +1,18 @@
+
+body {
+	font-family: sans-serif;
+	margin: 0;
+}
+
+.xero-header {
+	background-color: #0078c8;
+	height: 60px;
+}
+
+.demo {
+	align-items: center;
+	display: flex;
+	height: calc(100vh - 60px);
+	justify-content: center;
+	width: 100%;
+}

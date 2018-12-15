@@ -1,0 +1,41 @@
+{
+	"name": "react-animated-routes",
+	"version": "0.1.0",
+	"description": "Jog Day project to try out animating between code-split routes",
+	"author": "Emanuel Rabina <emanuel.rabina@xero.com>",
+	"repository": {
+		"type": "git",
+		"url": "https://github.dev.xero.com/dev-emanuelr/react-animated-routes"
+	},
+	"scripts": {
+		"lint": "eslint \"**/*.js\"",
+		"test": "npm run lint",
+		"build": "mkdirp dist && npm run build:scripts && npm run build:styles",
+		"build:scripts": "webpack",
+		"build:styles": "ncp styles dist/styles",
+		"watch": "concurrently --kill-others \"npm run watch:scripts\" \"npm run watch:styles\"",
+		"watch:scripts": "webpack --watch",
+		"watch:styles": "npm run build:styles && chokidar \"styles/**/*.css\" -c \"npm run build:styles\"",
+		"start": "node server.js"
+	},
+	"dependencies": {
+		"react": "^16.6.3",
+		"react-dom": "^16.6.3",
+		"react-router-dom": "^4.3.1"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.2.0",
+		"@babel/preset-env": "^7.2.0",
+		"@babel/preset-react": "^7.0.0",
+		"babel-loader": "^8.0.4",
+		"chokidar-cli": "^1.2.1",
+		"concurrently": "^4.1.0",
+		"eslint": "^5.10.0",
+		"eslint-config-ultraq": "^2.2.0",
+		"express": "^4.16.4",
+		"mkdirp": "^0.5.1",
+		"ncp": "^2.0.0",
+		"webpack": "^4.27.1",
+		"webpack-cli": "^3.1.2"
+	}
+}

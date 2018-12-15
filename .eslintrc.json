@@ -1,0 +1,12 @@
+{
+	"extends": [
+		"eslint:recommended",
+		"eslint-config-ultraq"
+	],
+	"parserOptions": {
+		"ecmaFeatures": {
+			"jsx": true
+		},
+		"ecmaVersion": 2018
+	}
+}
