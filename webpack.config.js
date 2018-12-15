@@ -1,10 +1,9 @@
 'use strict';
-
 const path = require('path');
 
 module.exports = {
 	mode: 'development',
-	entry: './scripts/demo.js',
+	entry: './scripts/Demo.js',
 	output: {
 		filename: 'demo.js',
 		path: path.resolve(__dirname, 'dist/scripts')

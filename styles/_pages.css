@@ -1,0 +1,32 @@
+
+.page-wrapper {
+	display: flex;
+	height: calc(100vh - 5px - 2em - 50px);
+	justify-content: center;
+}
+
+.page {
+	align-items: center;
+	border: 1px solid;
+	border-radius: 0.5em;
+	color: #333333;
+	display: flex;
+	height: 90%;
+	justify-content: center;
+	width: 90%;
+}
+
+.page-a {
+	background-color: var(--page-a-color);
+	border-color: var(--page-a-color-dark);
+}
+
+.page-b {
+	background-color: var(--page-b-color);
+	border-color: var(--page-b-color-dark);
+}
+
+.page-c {
+	background-color: var(--page-c-color);
+	border-color: var(--page-c-color-dark);
+}

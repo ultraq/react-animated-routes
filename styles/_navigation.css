@@ -1,0 +1,41 @@
+
+.navigation {
+	display: flex;
+	height: 50px;
+	justify-content: center;
+	margin: 1em auto;
+}
+
+.link {
+	padding: 1em 2em;
+	text-decoration: none;
+	transition: background-color 250ms;
+}
+
+.link-selected {
+	border-bottom: 2px solid;
+}
+
+.link-a {
+	color: var(--page-a-color-dark);
+}
+
+.link-a:hover {
+	background-color: var(--page-a-color);
+}
+
+.link-b {
+	color: var(--page-b-color-dark);
+}
+
+.link-b:hover {
+	background-color: var(--page-b-color);
+}
+
+.link-c {
+	color: var(--page-c-color-dark);
+}
+
+.link-c:hover {
+	background-color: var(--page-c-color);
+}
