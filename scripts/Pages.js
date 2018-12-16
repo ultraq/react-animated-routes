@@ -1,13 +1,11 @@
 
 import isMovingForward from './Routes.js';
+import AsyncComponent from './components/AsyncComponent.js';
 
 import classNames from 'classnames';
 import React from 'react';
 import {Route, Switch, withRouter} from 'react-router-dom';
 import {Transition, TransitionGroup} from 'react-transition-group';
-import PageA from './views/PageA.js';
-import PageB from './views/PageB.js';
-import PageC from './views/PageC.js';
 
 const ComponentToFunction = ({children, ...props}) => {
 	return children(props);
@@ -21,7 +19,7 @@ const useAnimationForEndTransition = (node, done) => {
 //       out into something to the side, like context, hooks, HOCs, FACs,
 //       anything!
 const Pages = ({children, location}) => (
-	<div className="page-wrapper">
+	<div className="pages">
 		<TransitionGroup component={null} childFactory={child => {
 			return React.cloneElement(child, {
 				animationDirection: isMovingForward(location) ? 'route' : 'route-reverse'
@@ -30,19 +28,28 @@ const Pages = ({children, location}) => (
 			<ComponentToFunction key={location.key}>
 				{({animationDirection, ...transitionProps}) => (
 					<Transition addEndListener={useAnimationForEndTransition} {...transitionProps}>
-						{state => (
-							<Switch location={location}>
-								<Route path="/a" render={routeProps => (
-									<PageA {...routeProps} className={classNames('route', `${animationDirection}-${state}`)}/>
-								)}/>
-								<Route path="/b" render={routeProps => (
-									<PageB {...routeProps} className={classNames('route', `${animationDirection}-${state}`)}/>
-								)}/>
-								<Route path="/c" render={routeProps => (
-									<PageC {...routeProps} className={classNames('route', `${animationDirection}-${state}`)}/>
-								)}/>
-							</Switch>
-						)}
+						{state => {
+							let routeClass = `${animationDirection}-${state}`;
+							return (
+								<Switch location={location}>
+									<Route path="/a" render={routeProps => (
+										<AsyncComponent loader={() =>
+											import(/* webpackChunkName: 'demo-page-a' */ './views/PageA.js')
+										} className={routeClass}/>
+									)}/>
+									<Route path="/b" render={routeProps => (
+										<AsyncComponent loader={() =>
+											import(/* webpackChunkName: 'demo-page-b' */ './views/PageB.js')
+										} className={routeClass}/>
+									)}/>
+									<Route path="/c" render={routeProps => (
+										<AsyncComponent loader={() =>
+											import(/* webpackChunkName: 'demo-page-c' */ './views/PageC.js')
+										} className={routeClass}/>
+									)}/>
+								</Switch>
+							);
+						}}
 					</Transition>
 				)}
 			</ComponentToFunction>

@@ -1,24 +1,40 @@
 
 .route {
 	--duration: 800ms;
+
+	display: flex;
+	height: 100%;
+	justify-content: center;
+	position: absolute;
+	width: 100%;
 }
 
 .route-entering {
 	animation: enter var(--duration) ease-in-out;
 }
 
+.route-entered {
+	position: relative;
+}
+
 .route-exiting {
 	animation: exit var(--duration) ease-in-out;
-	position: absolute;
+	position: relative;
+	z-index: 1;
 }
 
 .route-reverse-entering {
 	animation: exit var(--duration) ease-in-out reverse;
+	z-index: 1;
 }
 
 .route-reverse-exiting {
 	animation: enter var(--duration) ease-in-out reverse;
-	position: absolute;
+	position: relative;
+}
+
+.route-reverse-exited {
+	position: relative;
 }
 
 @keyframes enter {

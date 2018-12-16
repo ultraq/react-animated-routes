@@ -3,6 +3,9 @@
 		"sourceType": "module"
 	},
 	"rules": {
+		"no-unused-vars": ["error", {
+			"ignoreRestSiblings": true
+		}],
 		"react/prop-types": "off"
 	}
 }
