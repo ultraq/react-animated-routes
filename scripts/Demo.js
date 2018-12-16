@@ -13,11 +13,7 @@ ReactDOM.render(
 	<Router>
 		<Fragment>
 			<Navigation/>
-			<Pages>
-				<Route path="/a" component={PageA}/>
-				<Route path="/b" component={PageB}/>
-				<Route path="/c" component={PageC}/>
-			</Pages>
+			<Pages/>
 		</Fragment>
 	</Router>,
 	document.getElementById('react-root')

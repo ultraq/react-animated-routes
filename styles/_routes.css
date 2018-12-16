@@ -3,21 +3,20 @@
 	--duration: 800ms;
 }
 
-.route-appear,
-.route-enter {
+.route-entering {
 	animation: enter var(--duration) ease-in-out;
 }
 
-.route-exit {
+.route-exiting {
 	animation: exit var(--duration) ease-in-out;
 	position: absolute;
 }
 
-.route-reverse-enter {
+.route-reverse-entering {
 	animation: exit var(--duration) ease-in-out reverse;
 }
 
-.route-reverse-exit {
+.route-reverse-exiting {
 	animation: enter var(--duration) ease-in-out reverse;
 	position: absolute;
 }
