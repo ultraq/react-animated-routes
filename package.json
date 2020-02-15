@@ -1,11 +1,11 @@
 {
 	"name": "react-animated-routes",
 	"version": "0.1.0",
-	"description": "Jog Day project to try out animating between code-split routes",
-	"author": "Emanuel Rabina <emanuel.rabina@xero.com>",
+	"description": "Animated code-split routing demo w/ React",
+	"author": "Emanuel Rabina <emanuelrabina@gmail.com>",
 	"repository": {
 		"type": "git",
-		"url": "https://github.dev.xero.com/dev-emanuelr/react-animated-routes"
+		"url": "https://github.com/ultraq/react-animated-routes.git"
 	},
 	"scripts": {
 		"lint": "eslint \"**/*.js\"",
@@ -40,6 +40,7 @@
 		"eslint-plugin-react": "^7.11.1",
 		"express": "^4.16.4",
 		"mkdirp": "^0.5.1",
+		"parcel-bundler": "^1.12.4",
 		"postcss-cli": "^6.0.1",
 		"postcss-import": "^12.0.1",
 		"webpack": "^4.27.1",
