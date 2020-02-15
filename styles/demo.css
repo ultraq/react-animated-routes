@@ -1,7 +1,7 @@
 
-@import '_routes.css';
 @import './_navigation.css';
 @import './_pages.css';
+@import './_routes.css';
 
 :root {
 	--page-a-color: #ddddff;
