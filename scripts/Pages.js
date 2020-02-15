@@ -1,10 +1,9 @@
 
 import isMovingForward from './Routes.js';
-import AsyncComponent from './components/AsyncComponent.js';
+import AsyncComponent  from './components/AsyncComponent.js';
 
-import classNames from 'classnames';
-import React from 'react';
-import {Route, Switch, withRouter} from 'react-router-dom';
+import React                         from 'react';
+import {Route, Switch, withRouter}   from 'react-router-dom';
 import {Transition, TransitionGroup} from 'react-transition-group';
 
 const ComponentToFunction = ({children, ...props}) => {
@@ -18,7 +17,7 @@ const useAnimationForEndTransition = (node, done) => {
 // TODO: Holy cow this is complex!  Find a way to extract the animation logic
 //       out into something to the side, like context, hooks, HOCs, FACs,
 //       anything!
-const Pages = ({children, location}) => (
+const Pages = ({location}) => (
 	<div className="pages">
 		<TransitionGroup component={null} childFactory={child => {
 			return React.cloneElement(child, {
@@ -32,17 +31,17 @@ const Pages = ({children, location}) => (
 							let routeClass = `${animationDirection}-${state}`;
 							return (
 								<Switch location={location}>
-									<Route path="/a" render={routeProps => (
+									<Route path="/a" render={() => (
 										<AsyncComponent loader={() =>
 											import(/* webpackChunkName: 'demo-page-a' */ './views/PageA.js')
 										} className={routeClass}/>
 									)}/>
-									<Route path="/b" render={routeProps => (
+									<Route path="/b" render={() => (
 										<AsyncComponent loader={() =>
 											import(/* webpackChunkName: 'demo-page-b' */ './views/PageB.js')
 										} className={routeClass}/>
 									)}/>
-									<Route path="/c" render={routeProps => (
+									<Route path="/c" render={() => (
 										<AsyncComponent loader={() =>
 											import(/* webpackChunkName: 'demo-page-c' */ './views/PageC.js')
 										} className={routeClass}/>
