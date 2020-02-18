@@ -32,19 +32,13 @@ const Pages = ({location}) => (
 							return (
 								<Switch location={location}>
 									<Route path="/a" render={() => (
-										<AsyncComponent loader={() =>
-											import(/* webpackChunkName: 'demo-page-a' */ './views/PageA.js')
-										} className={routeClass}/>
+										<AsyncComponent loader={() => import('./views/PageA.js')} className={routeClass}/>
 									)}/>
 									<Route path="/b" render={() => (
-										<AsyncComponent loader={() =>
-											import(/* webpackChunkName: 'demo-page-b' */ './views/PageB.js')
-										} className={routeClass}/>
+										<AsyncComponent loader={() => import('./views/PageB.js')} className={routeClass}/>
 									)}/>
 									<Route path="/c" render={() => (
-										<AsyncComponent loader={() =>
-											import(/* webpackChunkName: 'demo-page-c' */ './views/PageC.js')
-										} className={routeClass}/>
+										<AsyncComponent loader={() => import('./views/PageC.js')} className={routeClass}/>
 									)}/>
 								</Switch>
 							);
